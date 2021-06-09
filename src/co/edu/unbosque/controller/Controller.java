@@ -6,7 +6,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * @author Gabriel Blanco
+ * @author Gabriel Blanco; Sebastian Moncaleano
+ * @version 1.0
+ * Clase controlador para unir la vista con el modelo
  */
 public class Controller implements ActionListener {
     private MainView vista = new MainView();
