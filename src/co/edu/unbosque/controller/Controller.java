@@ -1,31 +1,56 @@
 package co.edu.unbosque.controller;
 
-import co.edu.unbosque.view.MainView;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.util.Scanner;
 
 /**
  * @author Gabriel Blanco; Sebastian Moncaleano
  * @version 1.0
  * Clase controlador para unir la vista con el modelo
  */
-public class Controller implements ActionListener {
-    private MainView vista = new MainView();
+public class Controller  {
 
-    /**
-     * Cargar la vista principal
-     */
-    public void loadGUI() {
-        vista.start(this);
+    private Scanner sc = new Scanner(System.in);
+
+    public void consola() {
+        System.out.println("""
+                ------------------------------------------------------
+                Proyecto Final - Sebastian Moncaleano y Gabriel Blanco
+                ------------------------------------------------------
+                """);
+        ayuda();
+        boolean active = true;
+        while(active) {
+            try {
+                System.out.print("$> ");
+                var opcion = sc.next();
+                switch (opcion) {
+                    default -> System.out.println("Ingresa una opción válida");
+                    case "0" -> active = false;
+                    case "1" -> backtracking();
+                    case "2" -> ramapoda();
+                    case "3" -> ayuda();
+                }
+            } catch (Exception e) {
+                System.out.println("Error fatal. Saliendo");
+            }
+        }
     }
-    /**
-     * Invoked when an action occurs.
-     *
-     * @param e the event to be processed
-     */
-    @Override
-    public void actionPerformed(ActionEvent e) {
+
+    public void ayuda() {
+        System.out.println("""
+                Opción\tDescripción
+                0\t Salir
+                1\t Backtracking
+                2\t Rama y Poda
+                3\t Mostrar Esta Ayuda
+                """);
+    }
+
+    public void backtracking() {
+
+    }
+
+    public void ramapoda() {
 
     }
 }
@@ -33,6 +58,6 @@ public class Controller implements ActionListener {
 class APLMain {
     public static void main(String[] args) {
         Controller c = new Controller();
-        c.loadGUI();
+        c.consola();
     }
 }
