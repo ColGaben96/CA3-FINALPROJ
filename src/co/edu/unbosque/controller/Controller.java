@@ -1,5 +1,7 @@
 package co.edu.unbosque.controller;
 
+import co.edu.unbosque.model.RamaPoda;
+
 import java.util.Scanner;
 
 /**
@@ -31,7 +33,7 @@ public class Controller  {
                     case "3" -> ayuda();
                 }
             } catch (Exception e) {
-                System.out.println("Error fatal. Saliendo");
+                e.printStackTrace();
             }
         }
     }
@@ -51,7 +53,15 @@ public class Controller  {
     }
 
     public void ramapoda() {
-
+        int N = 4;
+        int[][] adj = {
+                {0, 10, 15, 20},
+                {10, 0, 35, 25},
+                {15, 35, 0, 30},
+                {20, 25, 30, 0}
+        };
+        RamaPoda rp = new RamaPoda();
+        rp.ejecucion(adj, N);
     }
 }
 
