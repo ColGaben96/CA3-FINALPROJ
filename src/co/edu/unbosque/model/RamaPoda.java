@@ -3,7 +3,7 @@ package co.edu.unbosque.model;
 import java.util.Arrays;
 
 /**
- * @author Gabriel Blanco
+ * @author Gabriel Blanco, Geeks for Geeks
  * @version 1.0
  */
 public class RamaPoda {
@@ -12,7 +12,7 @@ public class RamaPoda {
     private boolean[] visited;
     private int final_res = Integer.MAX_VALUE;
 
-    public   void ejecucion(int[][] adj, int N) {
+    public void ejecucion(int[][] adj, int N) {
         this.N = N;
         final_path = new int[N+1];
         visited = new boolean[N];
@@ -26,13 +26,13 @@ public class RamaPoda {
         System.out.println("");
     }
 
-    public   void copyToFinal(int[] curr_path)
+    public void copyToFinal(int[] curr_path)
     {
         if (N >= 0) System.arraycopy(curr_path, 0, final_path, 0, N);
         final_path[N] = curr_path[0];
     }
 
-    public   int firstMin(int[][] adj, int i)
+    public int firstMin(int[][] adj, int i)
     {
         int min = Integer.MAX_VALUE;
         for (int k = 0; k < N; k++)
@@ -41,7 +41,7 @@ public class RamaPoda {
         return min;
     }
 
-    public   int secondMin(int[][] adj, int i)
+    public int secondMin(int[][] adj, int i)
     {
         int first = Integer.MAX_VALUE, second = Integer.MAX_VALUE;
         for (int j=0; j<N; j++)
@@ -61,7 +61,7 @@ public class RamaPoda {
         return second;
     }
 
-    public   void TSPRec(int[][] adj, int curr_bound, int curr_weight,
+    public void TSPRec(int[][] adj, int curr_bound, int curr_weight,
                               int level, int[] curr_path) {
         // base case is when we have reached level N which
         // means we have covered all the nodes once
@@ -129,7 +129,7 @@ public class RamaPoda {
         }
     }
 
-    public   void TSP(int[][] adj)
+    public void TSP(int[][] adj)
     {
         int[] curr_path = new int[N + 1];
 
