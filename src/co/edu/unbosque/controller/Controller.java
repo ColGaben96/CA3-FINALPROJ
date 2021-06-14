@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class Controller  {
 
-    private Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
 
     public void consola() {
         System.out.println("""
