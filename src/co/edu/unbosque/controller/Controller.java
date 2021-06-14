@@ -1,5 +1,6 @@
 package co.edu.unbosque.controller;
 
+import co.edu.unbosque.model.LogicaSolitario;
 import co.edu.unbosque.model.RamaPoda;
 
 import java.util.Scanner;
@@ -49,16 +50,16 @@ public class Controller  {
     }
 
     public void backtracking() {
-
+        LogicaSolitario ls = new LogicaSolitario();
     }
 
     public void ramapoda() {
         int N = 4;
         int[][] adj = {
-                {0, 10, 15, 20},
-                {10, 0, 35, 25},
-                {15, 35, 0, 30},
-                {20, 25, 30, 0}
+                {20, 25, 15, 0},
+                {10, 0, 25, 25},
+                {55, 30, 35, 0},
+                {25, 20, 0, 20}
         };
         RamaPoda rp = new RamaPoda();
         rp.ejecucion(adj, N);
