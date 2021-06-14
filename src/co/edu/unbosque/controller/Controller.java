@@ -1,7 +1,8 @@
 package co.edu.unbosque.controller;
 
 import co.edu.unbosque.model.LogicaSolitario;
-import co.edu.unbosque.model.RamaPoda;
+import co.edu.unbosque.model.Nodo;
+import co.edu.unbosque.model.RamaYPoda;
 
 import java.util.Scanner;
 
@@ -54,15 +55,24 @@ public class Controller  {
     }
 
     public void ramapoda() {
-        int N = 4;
-        int[][] adj = {
-                {20, 25, 15, 0},
-                {10, 0, 25, 25},
-                {55, 30, 35, 0},
-                {25, 20, 0, 20}
-        };
-        RamaPoda rp = new RamaPoda();
-        rp.ejecucion(adj, N);
+        System.out.print("Ingresa la posición de la fila: ");
+        var posicionFila = sc.nextInt();
+        System.out.print("Ingresa la posición de la columna: ");
+        var posicionColumna = sc.nextInt();
+        System.out.print("Ingresa el destino de las filas: ");
+        var posDestinoFilas = sc.nextInt();
+        System.out.print("Ingresa el destino de las columnas: ");
+        var posDestinoColumnas = sc.nextInt();
+        System.out.print("Ingresa el ancho: ");
+        var ancho = sc.nextInt();
+        System.out.print("Ingresa el alto: ");
+        var alto = sc.nextInt();
+        System.out.print("Ingresa el salto en P: ");
+        var saltoP = sc.nextInt();
+        System.out.print("Ingresa el salto en Q: ");
+        var saltoQ = sc.nextInt();
+        Nodo nodo = new Nodo(posicionFila,posicionColumna);
+        RamaYPoda rama = new RamaYPoda(posDestinoFilas,posDestinoColumnas,nodo,ancho,alto,saltoP,saltoQ);
     }
 }
 
